@@ -1,0 +1,81 @@
+{% extends 'track/main.html' %}
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3">Tracking information</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="{% url 'home' %}">Back to home</a></p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Blog Start -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <h3>TRACKING INFORMATION</h3>
+            {% for track in track %}
+            <table class="table">
+                <tr>
+                    <td>Tracking number</td>
+                    <td>{{track.track_no}}</td>
+                </tr>
+                <tr>
+                    <td>Order number</td>
+                    <td>{{track.order_no}}</td>
+                </tr>
+                <tr>
+                    <td>Location code</td>
+                    <td>{{track.location_code}}</td>
+                </tr>
+                <tr>
+                    <td>Shippment date</td>
+                    <td>{{track.ship_date}}</td>
+                </tr>
+                <tr>
+                    <td>Shippment type</td>
+                    <td>{{track.ship_type}}</td>
+                </tr>
+                <tr>
+                    <td>Estimated delivery date</td>
+                    <td>{{track.del_date}}</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>{{track.weight}}kg</td>
+                </tr>
+                <tr>
+                    <td>Final destination</td>
+                    <td>{{track.final_des}}</td>
+                </tr>
+            </table>
+            {% endfor %}
+        </div>
+        <!-- <div class="col-lg-4">
+            <h3 class="text-dark">PAYMENT INFO</h3>
+            <table class="table">
+                <tr>
+                    <td>Tracking number</td>
+                    <td>TDN67ye64</td>
+                </tr>
+                <tr>
+                    <td>Tracking number</td>
+                    <td>TDN67ye64</td>
+                </tr>
+                <tr>
+                    <td>Tracking number</td>
+                    <td>TDN67ye64</td>
+                </tr>
+                <tr>
+                    <td>Tracking number</td>
+                    <td>TDN67ye64</td>
+                </tr>
+            </table>
+        </div> -->
+    </div>
+</div>
+{% endblock content %}
